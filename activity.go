@@ -4,7 +4,7 @@ import (
 	"github.com/project-flogo/core/activity"
 	"github.com/project-flogo/core/data/metadata"
 	"fmt"
-	
+
 )
 
 func init() {
@@ -56,7 +56,7 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 		
 	}
 
-	fmt.Print("In activity main")
+	fmt.Print("In activity main : ",output,input)
 	//print output
 
 	return true, nil
