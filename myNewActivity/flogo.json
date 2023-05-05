@@ -1,0 +1,29 @@
+{
+  "name": "sample-activity",
+  "type": "flogo:activity",
+  "version": "0.0.1",
+  "ref": "github.com/nilam-singh/flogo_activity/blob/main/activity.go",
+  "title": "Sample Activity",
+  "description": "Sample Activity",
+  "homepage": "https://github.com/nilam-singh/flogo_activity/blob/main/activity.go",
+  "settings": [
+    {
+      "name": "aSetting",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "input": [
+    {
+      "name": "anInput",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "output": [
+    {
+      "name": "anOutput",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "sample-activity",
+  "type": "flogo:activity",
+  "version": "0.0.1",
+  "title": "Use global App attribute",
+  "description": "Use global App attribute",
+  "homepage": "https://github.com/project-flogo/contrib/tree/master/activity/activity",
+  "settings":[
+    {}
+  ],
+  "input": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The value of the id"
+    }
+  ],
+  "output": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "The value of the id"
+    }
+  ]
+}
