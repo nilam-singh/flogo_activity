@@ -2,10 +2,10 @@
   "name": "sample-activity",
   "type": "flogo:activity",
   "version": "0.0.1",
-  "ref": "github.com/nilam-singh/flogo_activity/tree/main/myActivity",
+  "ref": "github.com/nilam-singh/flogo_activity/myActivity",
   "title": "Sample Activity",
   "description": "Sample Activity",
-  "homepage": "https://github.com/nilam-singh/flogo_activity/tree/main/myActivity",
+  "homepage": "https://github.com/nilam-singh/flogo_activity/myActivity",
   "settings": [
     {
       "name": "aSetting",
