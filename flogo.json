@@ -2,28 +2,25 @@
   "name": "sample-activity",
   "type": "flogo:activity",
   "version": "0.0.1",
-  "ref": "github.com/nilam-singh/flogo_activity/blob/main/activity.go",
-  "title": "Sample Activity",
-  "description": "Sample Activity",
-  "homepage": "https://github.com/nilam-singh/flogo_activity/blob/main/activity.go",
-  "settings": [
-    {
-      "name": "aSetting",
-      "type": "string",
-      "required": true
-    }
+  "title": "Use global App attribute",
+  "ref":"github.com/nilam-singh/flogo_activity/activity.go",
+  "description": "Use global App attribute",
+  "homepage": "https://github.com/nilam-singh/flogo_activity/activity.go",
+  "settings":[
+    {}
   ],
   "input": [
     {
-      "name": "anInput",
+      "name": "id",
       "type": "string",
-      "required": true
+      "description": "The value of the id"
     }
   ],
   "output": [
     {
-      "name": "anOutput",
-      "type": "string"
+      "name": "id",
+      "type": "string",
+      "description": "The value of the id"
     }
   ]
 }

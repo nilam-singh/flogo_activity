@@ -51,7 +51,10 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	err = ctx.SetOutputObject(output)
 	if err != nil {
 		return true, err
+		
 	}
+
+	fmt.Print("In activity main")
 
 	return true, nil
 }
