@@ -3,8 +3,9 @@
   "type": "flogo:activity",
   "version": "0.0.1",
   "title": "Use global App attribute",
+  "ref":"github.com/nilam-singh/flogo_activity",
   "description": "Use global App attribute",
-  "homepage": "https://github.com/project-flogo/contrib/tree/master/activity/activity",
+  "homepage": "https://github.com/nilam-singh/flogo_activity",
   "settings":[
     {}
   ],
