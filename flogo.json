@@ -1,26 +1,79 @@
 {
-  "name": "sample-activity",
-  "type": "flogo:activity",
-  "version": "0.0.1",
-  "title": "Use global App attribute",
-  "ref":"github.com/nilam-singh/flogo_activity",
-  "description": "Use global App attribute",
-  "homepage": "https://github.com/nilam-singh/flogo_activity",
-  "settings":[
-    {}
+  "name": "cli",
+  "description": "multi command CLI",
+  "version": "1.0.0",
+  "type": "flogo:app",
+  "appModel": "1.1.0",
+  "imports": [
+    "github.com/project-flogo/contrib/trigger/cli",
+    "github.com/project-flogo/flow"
   ],
-  "input": [
+  "triggers": [
     {
-      "name": "id",
-      "type": "string",
-      "description": "The value of the id"
+      "id": "cli",
+      "ref": "#cli",
+      "name": "simple",
+      "description": "Simple CLI Utility",
+      "settings": {
+        "usage": "<command>",
+        "long": "A simple cli using flogo"
+      },
+      "handlers": [
+        {
+          "name": "test1",
+          "settings": {
+            "usage": "[flags] [args]",
+            "short": "test command",
+            "long": "the test command",
+            "flags": [
+              "flag1||||the first value flag",
+              "flag2||false||the first bool flag"
+            ]
+          },
+          "action": {
+            "ref": "#flow",
+            "settings": {
+              "flowURI": "res://flow:command1"
+            },
+            "input": {
+              "flags": "=$.flags",
+              "args": "=$.args"
+            }
+          }
+        }
+      ]
     }
   ],
-  "output": [
+  "resources": [
     {
-      "name": "id",
-      "type": "string",
-      "description": "The value of the id"
+      "id": "flow:command1",
+      "data": {
+        "name": "command1",
+        "metadata": {
+          "input": [
+            {
+              "name": "flags",
+              "type": "object"
+            },
+            {
+              "name": "args",
+              "type": "array"
+            }
+          ]
+        },
+        "tasks": [
+          {
+            "id": "log",
+            "activity": {
+              "ref": "github.com/nilam-singh/flogo_activity",
+              "input": {
+              "args": "=$flow.args",
+              "flags": "=$flow.flags"
+              }
+            }
+          }
+        ]
+      }
     }
   ]
 }

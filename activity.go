@@ -1,10 +1,10 @@
 package sample
 
 import (
-	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/data/metadata"
 	"fmt"
 
+	"github.com/project-flogo/core/activity"
+	"github.com/project-flogo/core/data/metadata"
 )
 
 func init() {
@@ -13,7 +13,7 @@ func init() {
 
 var activityMd = activity.ToMetadata(&Settings{}, &Input{}, &Output{})
 
-//New optional factory method, should be used if one activity instance per configuration is desired
+// New optional factory method, should be used if one activity instance per configuration is desired
 func New(ctx activity.InitContext) (activity.Activity, error) {
 
 	s := &Settings{}
@@ -46,18 +46,9 @@ func (a *Activity) Eval(ctx activity.Context) (done bool, err error) {
 	if err != nil {
 		return true, err
 	}
+	fmt.Println("In Activity ", input.Args, input.Flags)
 
-	ctx.Logger().Debugf("Input: %s", input.AnInput)
-
-	output := &Output{AnOutput: input.AnInput}
-	err = ctx.SetOutputObject(output)
-	if err != nil {
-		return true, err
-		
-	}
-
-	fmt.Print("In activity main : ",output,input)
-	//print output
+	// ctx.Logger().Debugf("Input: %s", input.AnInput)
 
 	return true, nil
 }

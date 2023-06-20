@@ -7,18 +7,30 @@ type Settings struct {
 }
 
 type Input struct {
-	AnInput string `md:"anInput,required"`
+	Args  string `md:"args,required"`
+	Flags string `md:"flags,required"`
 }
 
 func (r *Input) FromMap(values map[string]interface{}) error {
-	strVal, _ := coerce.ToString(values["anInput"])
-	r.AnInput = strVal
+	strVal, err := coerce.ToString(values["args"])
+	if err != nil {
+		return err
+	}
+	r.Args = strVal
+
+	strVal, err = coerce.ToString(values["flags"])
+	if err != nil {
+		return err
+	}
+	r.Flags = strVal
+
 	return nil
 }
 
 func (r *Input) ToMap() map[string]interface{} {
 	return map[string]interface{}{
-		"anInput": r.AnInput,
+		"args":  r.Args,
+		"flags": r.Flags,
 	}
 }
 
